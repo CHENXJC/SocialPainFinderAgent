@@ -221,3 +221,9 @@ See [docs/ROADMAP.md](docs/ROADMAP.md) for version history and future direction.
 ## Disclaimer
 
 SocialPainFinderAgent is a research and portfolio project. It is not a replacement for professional market research, legal advice, privacy review, financial analysis, or final business decision-making. Rule-based classifications and scores should be reviewed by a human and validated with authorized, real-world research before action.
+
+## Managed through AgentHubControlCenter
+
+This project is part of my local-first AI Agent portfolio and can be managed through [AgentHubControlCenter](https://github.com/CHENXJC/AgentHubControlCenter), the central command center for agent manifests, safe actions, useful signals, workflow simulations, connector readiness, approval gates, and public-safe reporting.
+
+SocialPainFinderAgent is registered as an opportunity discovery module in AgentHubControlCenter.

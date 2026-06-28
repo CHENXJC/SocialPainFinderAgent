@@ -1,0 +1,166 @@
+{
+  "agent_id": "social_pain_finder_agent",
+  "agent_name": "SocialPainFinderAgent",
+  "category": "opportunity_discovery",
+  "project_type": "Agent",
+  "description": "Business opportunity discovery Agent for identifying social pain points, scoring opportunities, and exporting insight reports.",
+  "project_path": "F:\\AIProjects\\SocialPainFinderAgent",
+  "status": "Complete",
+  "version": "SPF-006-COMPLETE",
+  "inputs": [
+    "raw_social_posts",
+    "pain_point_rules",
+    "scoring_weights",
+    "target_user_context",
+    "demo_social_data"
+  ],
+  "outputs": [
+    "pain_points",
+    "opportunity_scores",
+    "top_opportunities",
+    "markdown_report",
+    "html_export",
+    "csv_export"
+  ],
+  "actions": [
+    {
+      "action_id": "view_project_status",
+      "label": "View project status",
+      "description": "Review the local PROJECT_STATUS.md checkpoint file.",
+      "action_type": "report_view",
+      "execution_mode": "not_executable",
+      "risk_level": "low",
+      "requires_approval": false,
+      "command_template": "Open PROJECT_STATUS.md in the project folder.",
+      "runbook_ref": "docs/MANUAL_RUNBOOK.md#social-pain-finder-agent-view-project-status",
+      "expected_output": "User can see the current checkpoint, validation status, and next stage.",
+      "safety_note": "Display/manual metadata only; AgentHub does not execute this action.",
+      "connector_required": "none",
+      "status": "display_only",
+      "enabled": true,
+      "safe_mode": true
+    },
+    {
+      "action_id": "view_agent_manifest",
+      "label": "View agent manifest",
+      "description": "Review the local agent_manifest.json metadata file.",
+      "action_type": "report_view",
+      "execution_mode": "not_executable",
+      "risk_level": "low",
+      "requires_approval": false,
+      "command_template": "Open agent_manifest.json in the project folder.",
+      "runbook_ref": "docs/MANUAL_RUNBOOK.md#social-pain-finder-agent-view-agent-manifest",
+      "expected_output": "User can inspect declared inputs, outputs, actions, connectors, and safety mode.",
+      "safety_note": "Display/manual metadata only; AgentHub does not execute this action.",
+      "connector_required": "none",
+      "status": "display_only",
+      "enabled": true,
+      "safe_mode": true
+    },
+    {
+      "action_id": "open_project_folder",
+      "label": "Open project folder",
+      "description": "Open the local project folder manually outside AgentHub.",
+      "action_type": "local_link",
+      "execution_mode": "manual_only",
+      "risk_level": "low",
+      "requires_approval": false,
+      "command_template": "explorer \"F:\\AIProjects\\SocialPainFinderAgent\"",
+      "runbook_ref": "docs/MANUAL_RUNBOOK.md#social-pain-finder-agent-open-project-folder",
+      "expected_output": "User manually opens the local project folder.",
+      "safety_note": "Display/manual metadata only; AgentHub does not execute this action.",
+      "connector_required": "none",
+      "status": "manual_ready",
+      "enabled": true,
+      "safe_mode": true
+    },
+    {
+      "action_id": "view_latest_report",
+      "label": "View latest report",
+      "description": "Review the latest public-safe sample report or exported summary.",
+      "action_type": "report_view",
+      "execution_mode": "not_executable",
+      "risk_level": "low",
+      "requires_approval": false,
+      "command_template": "Review the latest public-safe report or README demo output manually.",
+      "runbook_ref": "docs/MANUAL_RUNBOOK.md#social-pain-finder-agent-view-latest-report",
+      "expected_output": "User can review a public-safe report or sample output reference.",
+      "safety_note": "Display/manual metadata only; AgentHub does not execute this action.",
+      "connector_required": "none",
+      "status": "display_only",
+      "enabled": true,
+      "safe_mode": true
+    },
+    {
+      "action_id": "export_summary",
+      "label": "Export summary",
+      "description": "Use the copied command template or project UI to export a public-safe summary manually.",
+      "action_type": "command_template",
+      "execution_mode": "template_only",
+      "risk_level": "low",
+      "requires_approval": false,
+      "command_template": "Copy the command template and run manually only after review.",
+      "runbook_ref": "docs/MANUAL_RUNBOOK.md#social-pain-finder-agent-export-summary",
+      "expected_output": "A command string or manual instruction that the user may copy after review.",
+      "safety_note": "Command template is shown as text only; AgentHub does not execute it.",
+      "connector_required": "none",
+      "status": "template_ready",
+      "enabled": true,
+      "safe_mode": true
+    }
+  ],
+  "connectors": [
+    {
+      "connector_id": "local_filesystem",
+      "label": "Local project files",
+      "status": "available_local",
+      "mode": "read_only_manifest_context",
+      "safe_mode": true
+    },
+    {
+      "connector_id": "github_showcase",
+      "label": "GitHub showcase",
+      "status": "available_link",
+      "mode": "display_only",
+      "safe_mode": true
+    },
+    {
+      "connector_id": "streamlit_local_app",
+      "label": "Streamlit local dashboard",
+      "status": "manual_launch",
+      "mode": "display_command_only",
+      "safe_mode": true
+    },
+    {
+      "connector_id": "social_platform_api",
+      "label": "Social platform API",
+      "status": "optional_future",
+      "mode": "not_connected",
+      "safe_mode": true
+    },
+    {
+      "connector_id": "airtable",
+      "label": "Airtable",
+      "status": "planned",
+      "mode": "not_connected",
+      "safe_mode": true
+    }
+  ],
+  "demo_mode": true,
+  "safe_mode": true,
+  "last_run": "Not tracked yet",
+  "next_recommended_action": "Keep paused after public showcase and profile pin; review only from AgentHub.",
+  "github_repo": "https://github.com/CHENXJC/SocialPainFinderAgent",
+  "dashboard_url": "",
+  "tags": [
+    "Python",
+    "Streamlit",
+    "Opportunity Discovery",
+    "Pain Point Analysis",
+    "HTML Export"
+  ],
+  "owner": "BPCT / CHENXJC",
+  "public_showcase_status": "GitHub Public Showcase",
+  "pin_status": "Pinned",
+  "action_schema_version": "HUB-V2-005"
+}
